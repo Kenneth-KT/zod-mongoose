@@ -71,7 +71,7 @@ declare namespace zm {
     type Constructor = StringConstructor | NumberConstructor | ObjectConstructor | DateConstructor | BooleanConstructor | BigIntConstructor | typeof SchemaTypes.ObjectId | typeof SchemaTypes.UUID;
     interface mMap<T, K> extends _Field<Map<T, K>> {
         type: typeof Map;
-        of?: K;
+        of?: zm._Field<K>;
     }
     type mField = mString | mNumber | mBoolean | mDate | mObjectId | mUUID | mMixed<unknown> | mArray<unknown> | _Schema<unknown> | mMap<unknown, unknown>;
     type _Schema<T> = SchemaDefinition & {
